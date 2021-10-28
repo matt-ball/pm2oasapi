@@ -1,0 +1,21 @@
+{
+  "name": "pm2oasapi",
+  "version": "1.0.0",
+  "description": "API to convert Postman collections to OpenAPI",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matt-ball/pm2oasapi.git"
+  },
+  "author": "Matt Ball",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/matt-ball/pm2oasapi/issues"
+  },
+  "homepage": "https://github.com/matt-ball/pm2oasapi#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "js-yaml": "^4.1.0",
+    "postman2openapi": "^1.0.0-beta"
+  }
+}
