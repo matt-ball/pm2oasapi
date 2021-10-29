@@ -1,18 +1,12 @@
-const express = require('express')
-const app = express()
 const { transpile } = require('postman2openapi')
 
-app.use(express.json())
+exports.handler = async function (event) {
+  const openapi = transpile(event.body, 'yaml')
 
-app.post('/', (req, res) => {
-  try {
-    const collection = JSON.stringify(req.body)
-    const openapi = transpile(collection, 'yaml')
-
-    res.send(openapi)
-  } catch (e) {
-    res.send('Something went wrong!')
+  const response = {
+    statusCode: 200, 
+    body: openapi
   }
-})
 
-app.listen(3000, () => console.log(`Running!`))
+  return response
+}
